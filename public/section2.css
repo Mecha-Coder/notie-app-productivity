@@ -1,0 +1,92 @@
+#date-today{
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 24px;
+}
+
+#task{
+  border-bottom: 2px Solid #D9D9D9;
+  display: flex;
+  align-items: center;
+
+  padding: 18px 0px 30px 30px;
+}
+
+#task-input{
+  border: none;
+  outline: none;
+
+  width: 330px;
+  padding: 4px 14px;
+  font-size: 21px;
+  font-weight: 400;
+  border-bottom: 3px Solid 
+}
+
+#task-input::placeholder{color: grey}
+
+
+#task-btn{
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left:30px;
+  cursor: pointer;
+}
+
+#list{
+  overflow-y:auto;
+  height:660px;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+
+  margin-left: 28px;
+  margin-right: 28px;
+  padding: 15px 0px 15px 10px;
+  border-bottom: 2px Solid #D9D9D9;
+}
+
+.item-check{height: 25px; width: 25px}
+
+
+.item-name{
+  width: 310px;
+  padding-left: 14px;
+  padding-right: 28px;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration-thickness: 2.5px;
+}
+
+.item-btn{
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  margin-left:12px;
+  cursor: pointer;
+}
+
+.delete{background-color: #EA2D40}
+
+.edit{background-color: #222222}
+
+#task-btn:hover,
+.item-btn:hover{
+  opacity: 0.6;
+}
+
+
