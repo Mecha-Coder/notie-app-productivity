@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+  margin:0px;
+  padding:0px;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+#main{
+  display: grid;
+  grid-template-columns: 275px 550px 1fr;
+  height: 100vh;
+}
+
+#section1{ border-right: 2px Solid #D9D9D9 }
+#section3{  border-left: 2px Solid #D9D9D9 }
+
+:root {--theme: #0F6ED9}
+
+.theme-0F6ED9{--theme: #0F6ED9}
+.theme-212a44{--theme: #212a44}
+.theme-41bcff{--theme: #41bcff}  
+.theme-ff4500{--theme: #ff4500} 
+.theme-d44c47{--theme: #d44c47} 
+.theme-592626{--theme: #592626} 
+.theme-8a2be2{--theme: #8a2be2} 
+.theme-559f4c{--theme: #559f4c} 
+.theme-ffd700{--theme: #ffd700} 
