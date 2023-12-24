@@ -3,7 +3,7 @@ import Profile from "./section1/1-Profile";
 import Date from "./section2/1-Date";
 import Task from "./section2/2-Task";
 import List from "./section2/3-List"
-import {getUser} from "./backend"
+import {getUser,putTask,patchTask,delTask} from "./backend"
 
 const data = await getUser("Matthew");
 
@@ -23,7 +23,10 @@ function App() {
       <div id="section2"> 
         <Date />
         <Task user={data.user} add={addItem}/>
-        <List task={list} callback={removeItem}/>
+        <List task={list} 
+          tick={tickItem} 
+          edit={editItem}
+          remove={removeItem}/>
       </div>
     );
   }
@@ -56,23 +59,51 @@ function App() {
     setList(prevList => [...prevList,item]);
   }
 
-  function tickItem(task_id){
-
-  }
-
-  function editItem(editTask,task_id){
-
-  }
-
-  function removeItem(task_id){
+  async function tickItem(val,task_id){
     
-    setList(prevList =>{
-      const index = prevList.findIndex(item => item._id === task_id)
-      const latestList = [...prevList];
+    if(await putTask(val,task_id)) {
+      setList(prevList =>{
+        const index = prevList.findIndex(item => item._id === task_id)
+        prevList[index].check = val;
+       
+        return [...prevList]
+      })
+    }
+    else{errMsg()}
+  }
 
-      latestList.splice(index,1);
-      return latestList;
-    })
+  async function editItem(editTask,task_id){
+
+    if(await patchTask(editTask, task_id)){
+      setList(prevList =>{
+        const index = prevList.findIndex(item => item._id === task_id)
+        prevList[index].task = editTask;
+
+        return [...prevList]
+      })
+    }
+    else{ 
+      errMsg()
+      setList(prevList => [...prevList])
+    }
+  }
+
+  async function removeItem(task_id){
+    
+    if(await delTask(task_id)){
+      setList(prevList =>{
+        const index = prevList.findIndex(item => item._id === task_id)
+        const latestList = [...prevList];
+  
+        latestList.splice(index,1);
+        return latestList;
+      })
+    }
+    else{errMsg()}
+  }
+
+  function errMsg(){
+    alert("We can't relay updates to our server. Try again later")
   }
 }
 

@@ -2,13 +2,9 @@ import React, {useState} from "react";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaCheck } from "react-icons/fa";
-import {putTask, patchTask, delTask} from "../backend";
-
 
 function Item(props){
-  const [tick, setTick] = useState(props.data.check);
   const [edit, setEdit] = useState(false);
-  const [displayText, setdisplayText] = useState(props.data.task);
   const [editText, setEditText] = useState(props.data.task);
   
 
@@ -16,8 +12,8 @@ function Item(props){
     return(
       <input className={`item-check ${edit && "hide"}`}
         type="checkbox" 
-        onChange={checkTask}
-        checked={tick}
+        onChange={(e)=> {props.tick(e.target.checked,props.data._id)}}
+        checked={props.data.check}
       />
     );
   }
@@ -25,9 +21,9 @@ function Item(props){
   function TaskName(){
     return(
       <div className="item-name"
-        style={{textDecorationLine: tick && "line-through"}}
+        style={{textDecorationLine: props.data.check && "line-through"}}
       >
-        {displayText}
+        {props.data.task}
       </div>
     );
   }
@@ -47,7 +43,7 @@ function Item(props){
 
   function EditBtn(){
     return(
-      <button className={`item-btn edit ${tick && "hide"}`}
+      <button className={`item-btn edit ${props.data.check && "hide"}`}
         onClick={()=>{setEdit(true)}}
       >
         <MdEdit size={20} color="white"/>
@@ -58,7 +54,7 @@ function Item(props){
   function DeleteBtn(){
     return(
       <button className="item-btn delete"
-        onClick={deleteTask}
+        onClick={()=>{props.remove(props.data._id)}}
       >
         <RiDeleteBin5Line size={20} color="white"/>
       </button>
@@ -84,37 +80,12 @@ function Item(props){
     </div>
   );
 
-  async function checkTask(e){
-    
-    const val = e.target.checked;
-    if(await putTask(val,props.data._id))  {setTick(val)}
-    else{alert("We can't relay updates to our server. Try again later")}
-  }
-
-  async function updateTask(){
-
-    if (displayText !== editText){
-
-      if(await patchTask(editText, props.data._id)){
-        setdisplayText(editText)
-      }
-      else{
-        setEditText(displayText)
-        alert("We can't relay updates to our server. Try again later")
-      }
-      
-    }
+ 
+function updateTask(){
     setEdit(false)
-  }
 
-  async function deleteTask(){
-    const task_id=props.data._id
-
-    if(await delTask(task_id)){
-      props.callback(task_id)
-    }
-    else{
-      alert("We can't relay updates to our server. Try again later")
+    if (props.data.task !== editText){
+      props.edit(editText, props.data._id)   
     }
   }
 };
