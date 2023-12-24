@@ -33,7 +33,7 @@ function Task(props){
   async function addTask(){
     const result = await postTask(text,props.user._id)
     
-    if (result) {props.callback(result)}
+    if (result) {props.add(result)}
     else{alert("Server not working. Your task can't be saved")}
 
     setText("")

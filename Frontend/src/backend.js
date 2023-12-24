@@ -8,7 +8,6 @@ const axiosConfig = {
   }
 };
 
-
 async function getUser(userName){
   try {
     const result = await axios.get(HOST + "/user?name=" + userName)
@@ -19,7 +18,6 @@ async function getUser(userName){
     return {user: null, task:[]}
   }; 
 }
-
 
 async function postTask(task,user_id){
   const check = false;
@@ -47,5 +45,29 @@ async function putTask(tick,task_id){
   }
 }
 
+async function patchTask(editTask,task_id){
 
-export {getUser,postTask,putTask};
+  try{
+    await axios.patch(HOST + "/task",{editTask,task_id},axiosConfig);
+    return true;
+  }
+  catch(error){
+    console.log({location:"code4",error})
+    return false
+  }
+}
+
+async function delTask(task_id){
+  
+  try{
+    await axios.delete(HOST + "/task?task_id=" + task_id);
+    return true;
+  }
+  catch(error){
+    console.log({location:"code5",error})
+    return false
+  }
+}
+
+
+export {getUser,postTask,putTask,patchTask,delTask};

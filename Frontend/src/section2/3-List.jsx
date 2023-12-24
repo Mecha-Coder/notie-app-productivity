@@ -14,10 +14,12 @@ function List(props){
     <Item  
       key={item._id} 
       data={item} 
+      tick={props.tick}
+      edit={props.edit} 
+      remove={props.remove}
     />
     );
   }
 }
-
 
 export default List;

@@ -72,6 +72,18 @@
   text-decoration-thickness: 2.5px;
 }
 
+.item-edit-name{
+  width: 310px;
+  background-color: var(--theme);
+  color: white;
+  padding-left: 14px;
+  padding-right: 28px;
+  font-size: 18px;
+  font-weight: 400;
+  border:none;
+  outline: none;
+}
+
 .item-btn{
   border: none;
   display: flex;
@@ -83,11 +95,23 @@
   border-radius: 20%;
   margin-left:12px;
   cursor: pointer;
+  pointer-events: all;
 }
 
 .delete{background-color: #EA2D40}
 
-.edit{background-color: #222222}
+.edit{
+  background-color: #222222;
+}
+
+.theme{
+  background-color: var(--theme);
+}
+
+.hide{
+  pointer-events: none;
+  opacity: 0;
+}
 
 #task-btn:hover,
 .item-btn:hover{

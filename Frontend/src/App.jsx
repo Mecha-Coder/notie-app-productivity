@@ -22,8 +22,8 @@ function App() {
     return(
       <div id="section2"> 
         <Date />
-        <Task user={data.user} callback={updataList}/>
-        <List task={list} />
+        <Task user={data.user} add={addItem}/>
+        <List task={list} callback={removeItem}/>
       </div>
     );
   }
@@ -40,15 +40,39 @@ function App() {
     
     if(data.user){
       document.querySelector("body").setAttribute("class",`theme-${data.user.theme}`)
-      return <div id="main"><Section1/><Section2/><Section3/></div>
+      return (
+        <div id="main">
+          <Section1/>
+          <Section2/>
+          <Section3/>
+        </div>);
     }
-      else{return <h1>User not found</h1>}
+    else{return <h1>User not found</h1>}
 
   } 
   else{ return <h1>Can't get data from server</h1> }
 
-  function updataList(object){
-    setList(prevList => [...prevList,object]);
+  function addItem(item){
+    setList(prevList => [...prevList,item]);
+  }
+
+  function tickItem(task_id){
+
+  }
+
+  function editItem(editTask,task_id){
+
+  }
+
+  function removeItem(task_id){
+    
+    setList(prevList =>{
+      const index = prevList.findIndex(item => item._id === task_id)
+      const latestList = [...prevList];
+
+      latestList.splice(index,1);
+      return latestList;
+    })
   }
 }
 
