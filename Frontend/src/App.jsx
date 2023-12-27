@@ -2,14 +2,33 @@ import React, {useState} from "react";
 import Profile from "./section1/1-Profile";
 import Date from "./section2/1-Date";
 import Task from "./section2/2-Task";
-import List from "./section2/3-List"
-import {getUser,putTask,patchTask,delTask} from "./backend"
+import List from "./section2/3-List";
+import Select from "./section3/1-Select";
+import Editor from "./section3/2-Editor";
+import {getUser,putTask,patchTask,delTask} from "./backend";
 
-const data = await getUser("Matthew");
+
+const data = await getUser("Desmond");
+let currentNote
+
+if (data.user.current_note) { 
+  const index = (data.note).findIndex(item => 
+    item._id === data.user.current_note
+  );
+
+  currentNote = data.note[index];
+}
+else{
+  currentNote = {
+    title: "Blank",
+    data: "<h3>Click on the new note button to start having you document</h3>"
+  }
+}
 
 function App() {
   const [list, setList] = useState(data.task);
-
+  const [note, setNote] = useState(currentNote)
+  
   function Section1(){
     return(
       <div id="section1">
@@ -34,7 +53,8 @@ function App() {
   function Section3(){
     return(
       <div id="section3">
-         Section 3
+        <Select title={note.title}/>
+        <Editor note={note.data}/>
       </div>
     );
   }
@@ -108,4 +128,5 @@ function App() {
 }
 
 export default App;
+
 

@@ -16,7 +16,8 @@ await mongoose.connect('mongodb://127.0.0.1/notie-db');
 const userSchema = new mongoose.Schema({
   name: String,
   img: String,
-  theme: String
+  theme: String,
+  current_note: String,
 })
 const User = mongoose.model("user",userSchema)
 
@@ -29,6 +30,14 @@ const taskSchema = new mongoose.Schema({
 const Task = mongoose.model("task",taskSchema)
 
 
+const noteSchema = new mongoose.Schema({
+  title: String,
+  data: String,
+  user_id: String,
+})
+const Note = mongoose.model("note",noteSchema)
+
+
 //-----------------------------------------------------
 
 
@@ -38,8 +47,9 @@ app.get("/user", async (req,res)=>{
    try{
     const user = await User.findOne({name : req.query.name});
     const task = user ?  await Task.find({user_id: user._id}).select("task check") : [];
+    const note = user ?  await Note.find({user_id: user._id}).select("title data") : [];
 
-    res.json({user,task});
+    res.json({user,task, note});
   } 
 
   catch (error){

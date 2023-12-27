@@ -1,0 +1,79 @@
+#select{
+  position: relative;
+  display: flex;
+  padding: 20px 0px 24px 24px;
+  width: 780px;
+  z-index: 100;
+}
+
+#new-note-btn{
+  color: white;
+  border: none;
+  background-color: var(--theme);
+
+  font-size:18px;
+  font-weight: 500;
+  padding: 8px 24px;
+  border-radius: 30px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+#select-container{
+  border: 1px Solid Black;
+  display: flex;
+  align-items: center;
+  border: none;
+
+  border-bottom: 3px Solid var(--theme);
+}
+
+#note-name-edit{
+  outline: none;
+  border: none;
+  color: white;
+
+  width: 380px;
+  padding-left:10px;
+  padding-right: 10px;
+  font-size: 21px;
+  font-weight: 500;
+  background-color: var(--theme);
+  flex-shrink: 0;
+}
+
+#note-name-display{
+  border: none;
+
+  width: 380px;
+  padding-left:10px;
+  padding-right: 10px;
+  font-size: 21px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+
+#select-btn{
+  background-color: transparent;
+  border: none;
+
+  right: 0px;
+}
+
+.ql-toolbar.ql-snow{ 
+  width: 2000px;
+  border: none !important;
+  border-bottom: 2px Solid #D9D9D9 !important;
+  padding: 17.5px 0px 20px 24px !important;
+  background-color: transparent !important;
+  z-index: -1 !important;  
+}
+
+.ql-container.ql-snow{ 
+  width: 100%;
+  border: none !important;
+  overflow-y: auto;
+  height: 80.5vh;
+  padding: 20px 24px 0px 24px;
+}

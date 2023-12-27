@@ -15,7 +15,7 @@ async function getUser(userName){
 
   } catch (error) {
     console.log({location:"code1",error})
-    return {user: null, task:[]}
+    return false;
   }; 
 }
 
@@ -29,7 +29,7 @@ async function postTask(task,user_id){
 
   catch(error){
     console.log({location:"code2",error})
-    // Return undefined
+    return false;
   }
 }
 
