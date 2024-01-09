@@ -1,0 +1,40 @@
+.ql-toolbar {
+  text-align: center;
+  padding-bottom: 14px !important;
+  border: none !important;
+  border-bottom: 2px Solid var(--grey) !important; 
+
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.ql-container{
+  border: none !important;
+  padding: 10px 20px 25px 20px;
+
+  position: absolute;
+  top: 114px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  height: auto;
+}
+
+span.ql-size.ql-picker{
+  width: 70px !important;
+}
+
+/* Source https://copyprogramming.com/howto/how-to-add-custom-font-sizes-to-quilljs-editor*/
+
+.ql-snow{
+  .ql-picker{
+      &.ql-size{
+          .ql-picker-label,
+          .ql-picker-item{
+              &::before{
+                  content: attr(data-value) !important;
+              }
+          }
+      }
+  }
+}

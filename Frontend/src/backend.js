@@ -69,5 +69,18 @@ async function delTask(task_id){
   }
 }
 
-
 export {getUser,postTask,putTask,patchTask,delTask};
+
+async function patchNote(editNote,note_id){
+
+  try{
+    await axios.patch(HOST + "/note",{editNote,note_id},axiosConfig);
+    return true;
+  }
+  catch(error){
+    console.log({location:"code6",error})
+    return false
+  }
+}
+
+export {patchNote}

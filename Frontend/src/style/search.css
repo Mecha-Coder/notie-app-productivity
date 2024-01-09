@@ -1,0 +1,30 @@
+#search{
+  position: absolute;
+  background-color: #f8f8f8;
+
+  top: 37px;
+  left: 0px;
+  right: 0px;
+  height: 350px;
+  z-index: 1;
+  border-bottom-left-radius: var(--section-radius);
+  border-bottom-right-radius: var(--section-radius);
+
+  box-shadow: 0px 0px 12px var(--grey);
+}
+
+#search-list{
+  padding: 10px 10px 0px 10px;
+  overflow-y: auto;
+  height: 90%;
+}
+
+.search-item{
+  padding: 14px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-item:hover{
+  background-color: var(--hover);
+}

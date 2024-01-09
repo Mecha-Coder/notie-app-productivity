@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+#pomodoro{
+  width: 90%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#pomodoro p{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+#pomo-status{
+  font-size: 21px;
+  margin:0px;
+}
+
+#progress{
+  width: 80%;
+  margin: 12px;
+}
+
+.range{
+  display: flex;
+  align-items: center;
+  padding: 4px 0px;
+}
+
+#timer{
+  position: absolute;
+
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#timer p{
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 4px;
+  font-size: 21px;
+}
+
+.range input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+#work input[type="range"]{
+  accent-color: var(--green)
+}
+
+#rest input[type="range"]{
+  accent-color: var(--red)
+}
+
+
+.range label{
+  width: 30px;
+  text-align: center;
+}
+
+#pomodoro button{
+  margin-top: 25px;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 40px;
+  font-size: 18px;
+  color: white;
+  background-color: var(--blue);
+}
+
+#pomodoro button:hover{
+  opacity: 0.7
+}

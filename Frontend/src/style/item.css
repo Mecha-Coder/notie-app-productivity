@@ -1,0 +1,9 @@
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  border-bottom: 1px Solid var(--grey);
+  padding: 12px 14px;
+}
+

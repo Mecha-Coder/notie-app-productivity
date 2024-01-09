@@ -32,7 +32,7 @@ const Task = mongoose.model("task",taskSchema)
 
 const noteSchema = new mongoose.Schema({
   title: String,
-  data: String,
+  note: String,
   user_id: String,
 })
 const Note = mongoose.model("note",noteSchema)
@@ -47,9 +47,15 @@ app.get("/user", async (req,res)=>{
    try{
     const user = await User.findOne({name : req.query.name});
     const task = user ?  await Task.find({user_id: user._id}).select("task check") : [];
-    const note = user ?  await Note.find({user_id: user._id}).select("title data") : [];
+    const note_list = user ?  await Note.find({user_id: user._id}).select("title") : [];
 
-    res.json({user,task, note});
+    let current_note
+
+    if(user) {
+      current_note = user.current_note ? await Note.findOne({_id: user.current_note}) : false;
+    } else { current_note = false}
+
+    res.json({user, task, note_list, current_note});
   } 
 
   catch (error){
@@ -115,4 +121,20 @@ app.delete("/task", async(req,res)=>{
     console.log(error)
     res.sendStatus(500)
   }
+})
+
+//Edit note
+app.patch("/note", async(req,res)=>{
+  const {editNote, note_id} = req.body
+
+  try{
+    await Note.findOneAndUpdate({_id:note_id}, {note:editNote})
+    res.sendStatus(200); 
+  }
+
+  catch (error){
+    console.log(error)
+    res.sendStatus(500)
+  }
+
 })

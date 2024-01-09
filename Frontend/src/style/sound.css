@@ -1,0 +1,28 @@
+#sound{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px
+}
+
+.audio-btn{
+  width: 120px;
+  text-align: center;
+  color: black;
+  border: none;
+  padding: 8px 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+.audio-btn:hover{
+  background-color: var(--hover);
+  color: black;
+}
+
+.audio-active{
+  background-color: var(--blue);
+  color: white;
+  font-weight: normal;
+}

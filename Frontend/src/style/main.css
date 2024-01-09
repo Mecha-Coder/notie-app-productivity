@@ -1,0 +1,19 @@
+#main{
+  background-color: lightgray;
+  position: fixed;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  
+  gap: 30px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+
+  padding: 20px 30px;
+}
+
+#cover{
+  position: fixed;
+}

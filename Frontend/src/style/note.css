@@ -1,0 +1,23 @@
+#note{
+  background-color: white;
+  border-radius:  var(--section-radius);
+  position: relative;
+
+  flex : 2;
+  height: 100%; 
+  width: 100%;
+  min-height: 503px;
+}
+
+#cover-editor{
+  position: absolute;
+  background-color: var(--hover);
+  right: 0px;
+  left: 0px;
+  top: 122px;
+  bottom: 0px;
+  border-bottom-left-radius: var(--section-radius);
+  border-bottom-right-radius: var(--section-radius);
+}
+
+

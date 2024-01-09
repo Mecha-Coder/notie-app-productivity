@@ -1,0 +1,165 @@
+
+
+#configure{
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey);
+  position:fixed;
+  top:0px;
+  right:0px;
+  left: 0px;
+  bottom:0px;
+  overflow-y: auto;
+}
+
+.another{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#save-conf{
+
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  background-color: var(--blue);
+  border:none;
+  border-radius: 50PX;
+  padding: 10px 30px;
+}
+
+.section{
+  display: flex;
+ 
+  flex-direction: column;
+  background-color: white;
+  border-radius: var(--section-radius);
+  width: auto;
+  padding: 60px;
+}
+
+.section>p{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px;
+  padding-bottom: 40px;
+}
+
+.info-row{
+  display: flex;
+  padding: 18px 0px;
+  align-items: center;
+}
+
+.info-row div{
+  margin-left: 20px;
+  font-size:14px;
+  color: grey;
+ 
+}
+
+.info-row input{
+  font-family: sans-serif;
+  font-size: 16px;
+  width: 300px;
+  border-radius: 50px;
+  outline: none;
+  border: 1px Solid var(--grey);
+  padding: 8px 20px;
+}
+
+.info-row label{
+  font-weight: bold;
+  font-size: 14px;
+  width: 80px;
+}
+
+/******************************/
+#drawer{
+  display: flex;
+  gap:20px;
+  justify-content: space-around;
+  padding: 30px 0px 45px 0px;
+}
+
+.color{
+  width: 20px;
+  height:20px;
+}
+
+._0{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color: var(--grey)
+}
+._1{background-image: url("../asset/pattern/1.svg")}
+._2{background-image: url("../asset/pattern/2.svg")}
+._3{background-image: url("../asset/pattern/3.svg")}
+._4{background-image: url("../asset/pattern/4.svg")}
+
+.pattern{
+  width: 50px;
+  height:50px;
+  border: 1px Solid var(--grey);
+  background-repeat: round;
+}
+
+.info-avatar{
+  display: flex;
+  padding: 15px 0px;
+  align-items: flex-start;
+}
+
+.info-avatar div{
+  margin-left: 20px;
+  font-size:14px;
+  color: grey
+}
+
+.info-avatar label{
+  font-weight: bold;
+  font-size: 14px;
+  width: 80px;
+}
+
+
+#info .profile-img{
+  display: flex;
+  align-items:center;  
+  margin: 0px;
+}
+
+.profile-img img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%
+}
+
+
+.divider-line{
+  border-bottom: 1px solid var(--grey);
+  margin-bottom: 10px;
+}
+
+@media(max-width: 1119px){
+  #configure{
+    flex-direction: column;
+    padding-top: 540px;
+    padding-bottom: 40px;
+  }
+
+  .info-row input{
+    width: 200px;
+  }
+}
+
+@media(max-width: 500px){
+  .section{
+    padding: 60px 20px
+  }
+}

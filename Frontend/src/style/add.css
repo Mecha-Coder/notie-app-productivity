@@ -1,0 +1,6 @@
+#add{
+  display: flex;
+  justify-content: center;
+}
+
+#add-box{position: relative;}

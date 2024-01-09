@@ -1,0 +1,64 @@
+:root{
+  --section-radius: 40px;
+  --black: #222222;
+  --green: #00BA00;
+  --red: #EA2D40;
+  --blue: #0F6ED9;
+  --grey: #d3d3d3;
+  --hover: rgba(0,0,0,0.1);
+  --lightText: rgba(0,0,0,0.3)
+}
+
+body{
+  font-family: sans-serif;
+
+  padding:0px;
+  margin:0px;
+}
+
+@media (max-width:1450px){
+
+  #sidebar{
+    position: fixed;
+    top:50%;
+    left: 30px;
+    transform: translate(0%, -50%);
+  }
+
+  #cover{
+    z-index:2;
+    top:0px;
+    bottom:0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,0.7);
+  }
+}
+
+@media (max-width: 1000px){
+  #task{
+    flex:2;
+  }
+}
+
+@media (max-width: 850px){
+  #main{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 414px){
+  .ql-container{
+    top: 141px;
+  }
+
+  #title input,
+  #add input{
+    width: 240px;
+    padding: 4px 0px 4px 0px;
+  }
+
+  #optionY{
+    top: 96px;
+  }
+}

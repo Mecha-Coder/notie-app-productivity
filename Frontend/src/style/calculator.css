@@ -1,0 +1,55 @@
+#calculator{
+  width: 90%;
+}
+
+#pad-layout{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 4px;
+}
+
+.pad{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  font-size: 18px;
+  color: white;
+  height: 45px;
+  cursor: pointer;
+}
+
+.pad:hover{
+  opacity: 0.8;
+}
+
+.xxl{
+  font-size: 27px;
+}
+
+.equl-sign{
+  grid-column: span 2;
+}
+
+.red{
+  background-color: var(--red);
+}
+
+.blue{
+  background-color: var(--blue);
+}
+
+#calculate{
+  margin-top: 20px;
+  padding: 12px 8px;
+  font-size: 18px;
+  height: 87px;
+  border: 1px Solid var(--grey)
+}
+
+#result{
+  margin: 12px 8px;
+  font-size: 18px;
+  text-align: right;
+  color: var(--grey)
+}

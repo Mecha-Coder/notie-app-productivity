@@ -1,0 +1,9 @@
+#title{
+  display: flex;
+  justify-content: center;
+
+  padding: 23px 0px 12px 0px;
+}
+
+#title-box{position: relative}
+

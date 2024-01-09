@@ -1,0 +1,10 @@
+#optionY{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  top: 72px;
+  right: 10px;
+}

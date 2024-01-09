@@ -1,0 +1,23 @@
+#task{
+  background-color: white;
+  border-radius:  var(--section-radius);
+  position: relative;
+
+  flex:1.6;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  min-height: 503px;
+}
+
+#list{
+  position: absolute;
+  overflow-y: auto;
+
+  bottom: 38px;
+  top: 140px;
+  left: 0px;
+  right: 0px;
+
+  padding: 0px 16px;
+}

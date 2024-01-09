@@ -1,0 +1,16 @@
+#sidebar{
+  background-color: white;
+  border-radius: var(--section-radius);
+  position: relative;
+
+  flex-shrink: 0;
+  z-index:4;
+  width: 240px;
+  padding-bottom: 8px;
+}
+
+#sidebar > p{
+  font-size: 18px;
+  margin: 20px 0px 8px 20px;
+}
+
