@@ -8,21 +8,27 @@
 .audio-btn{
   width: 120px;
   text-align: center;
-  color: black;
   border: none;
   padding: 8px 0px;
   border-radius: 30px;
-  font-weight: bold;
   cursor:pointer;
+
+  color: black;
+  font-weight: bold;
 }
 
 .audio-btn:hover{
   background-color: var(--hover);
-  color: black;
 }
 
 .audio-active{
   background-color: var(--blue);
   color: white;
   font-weight: normal;
+  width: 120px;
+  text-align: center;
+  border: none;
+  padding: 8px 0px;
+  border-radius: 30px;
+  cursor:pointer;
 }

@@ -33,16 +33,17 @@
 
 #timer{
   position: absolute;
-
-  top: 72px;
+  top: 87px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 #timer p{
-  font-family: 'Orbitron', sans-serif;
+  font-family: monospace;
   letter-spacing: 4px;
-  font-size: 21px;
+  font-size: 32px;
+  margin:0px;
+  text-align: center;
 }
 
 .range input[type="range"] {
@@ -57,7 +58,6 @@
 #rest input[type="range"]{
   accent-color: var(--red)
 }
-
 
 .range label{
   width: 30px;
